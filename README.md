@@ -1,76 +1,128 @@
 # 👨‍💼 Employee Management System
 
-A console-based **Employee Management System** built using **Java, Hibernate ORM, MySQL, Maven, and JPA**.
-
-This project demonstrates how a Java application can perform database operations using Hibernate ORM, implement CRUD functionality, manage transactions, validate user input, and handle exceptions in a structured console-based application.
+> A console-based Employee Management System built using **Java, Hibernate ORM, JPA, Maven, and MySQL**, demonstrating CRUD operations, transaction management, input validation, exception handling, and database integration.
 
 ---
 
-## 🚀 Project Highlights
+## 📌 Overview
 
-- ✅ Create employee records
-- 🔍 Read employee details by ID
-- ✏️ Update employee information
-- 🗑️ Delete employee records
-- 🛡️ Input validation
-- 🔄 Hibernate transaction management
-- 🗄️ MySQL database integration
-- 🧩 JPA entity mapping
-- 📦 Maven dependency management
-- ⚠️ Exception handling
-- 🔐 Database credential protection using `.gitignore`
-- 💻 Menu-driven console interface
+The **Employee Management System** is a Java-based console application developed to manage employee records using **Hibernate ORM** and **MySQL**.
 
----
+The application provides complete **CRUD functionality**:
 
-## 📌 Project Overview
+- ➕ Create Employee
+- 🔍 Read Employee
+- ✏️ Update Employee
+- 🗑️ Delete Employee
 
-The **Employee Management System** is a Java-based CRUD application designed to manage employee information stored in a MySQL database.
+It also demonstrates:
 
-Hibernate ORM is used as the persistence framework, allowing Java objects to be mapped to relational database tables.
+- Input validation
+- Exception handling
+- Hibernate transaction management
+- JPA entity mapping
+- Maven dependency management
+- MySQL database connectivity
+- Secure database configuration
+- Console-based user interaction
 
-Instead of manually writing SQL queries for every CRUD operation, Hibernate manages the object-relational mapping between the Java `Employee` entity and the MySQL `employee` table.
-
----
-
-## 🛠️ Technology Stack
-
-| Technology | Purpose |
-|------------|---------|
-| Java 17 | Core application development |
-| Hibernate ORM 6.4.0.Final | Object-Relational Mapping |
-| JPA | Entity mapping |
-| MySQL | Database |
-| Maven | Dependency management |
-| Eclipse IDE | Development environment |
-| Git | Version control |
-| GitHub | Source code repository |
+This project was developed as a practical implementation of **Java + Hibernate database integration**.
 
 ---
 
-## 🏗️ Project Structure
+# 🎯 Objectives
+
+The main objectives of this project are:
+
+1. Understand Hibernate ORM.
+2. Connect a Java application with MySQL.
+3. Map Java objects to relational database tables.
+4. Perform CRUD operations using Hibernate.
+5. Understand Hibernate `Session` and `SessionFactory`.
+6. Implement database transaction management.
+7. Implement input validation.
+8. Handle application and database exceptions.
+9. Manage dependencies using Maven.
+10. Use Git and GitHub for version control.
+
+---
+
+# ✨ Features
+
+## 👤 Employee Management
+
+### ➕ Add Employee
+
+Users can add a new employee by providing:
+
+- Name
+- Salary
+- Designation
+- Department
+
+### 🔍 View Employee
+
+Users can retrieve employee details using Employee ID.
+
+### ✏️ Update Employee
+
+Users can update:
+
+- Name
+- Salary
+- Designation
+- Department
+
+### 🗑️ Delete Employee
+
+Users can delete an employee using Employee ID.
+
+### 🚪 Exit
+
+The application safely closes the Hibernate `SessionFactory` and Scanner before terminating.
+
+---
+
+# 🏗️ Application Architecture
+
+The application follows a simple layered organization.
 
 ```text
-EmployeeManagementSystem/
-│
-├── .mvn/
-│   ├── jvm.config
-│   └── maven.config
-│
-├── src/
-│   └── main/
-│       ├── java/
-│       │   └── com/
-│       │       └── company/
-│       │           ├── entity/
-│       │           │   └── Employee.java
-│       │           │
-│       │           └── main/
-│       │               └── EmployeeManagementSystemApp.java
-│       │
-│       └── resources/
-│           └── hibernate.cfg.xml
-│
-├── .gitignore
-├── pom.xml
-└── README.md
+                    ┌─────────────────────────┐
+                    │       User / Console    │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+              ┌──────────────────────────────────┐
+              │ EmployeeManagementSystemApp      │
+              │                                  │
+              │ • Menu Management                │
+              │ • Input Validation               │
+              │ • CRUD Operations                │
+              │ • Exception Handling             │
+              │ • Transaction Management         │
+              └───────────────┬──────────────────┘
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │ Hibernate ORM      │
+                    │                   │
+                    │ Configuration     │
+                    │ SessionFactory     │
+                    │ Session            │
+                    │ Transaction        │
+                    └─────────┬─────────┘
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │ JPA Entity         │
+                    │ Employee.java      │
+                    └─────────┬─────────┘
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │ MySQL Database     │
+                    │                   │
+                    │ CompanyDB          │
+                    │ employee table    │
+                    └───────────────────┘
